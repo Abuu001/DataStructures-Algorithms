@@ -7,6 +7,9 @@
  *  anagrams('heart', '       earth')  -->True
  *  anagrams('Heart', 'EARTH')  -->True
  *  anagrams('lol', 'loic')  -->False
+ * 
+ * method 2:
+ * NB words in anagram can be the same if they are arranged alphabetically
  */
 
 const anagrams = (str1 , str2)=> {
@@ -31,8 +34,9 @@ const anagrams = (str1 , str2)=> {
             str1CharCount[bChar]-- ;
         }
     }
-    return true
+    return true ;
 }
 
-console.log(anagrams('heart', 'earth'));
-console.log(anagrams('Heart', 'EARTH'));
+console.log(anagrams('heart', 'earth'));   // true
+console.log(anagrams('Heart', 'EARTH'));   // true
+console.log(anagrams('egg', 'Geg'));   // true
