@@ -1,7 +1,7 @@
 /**
  * Binary search trees are fast for insertions and deletions
  * 
- * Difference btwn breadth-first-search and deep-first-search is 
+ * Difference btwn breadth-first-search and depth-first-search is 
  *   that dfs  looks for values branch by branch 
  *    bfs  looks for level by level
  */
@@ -21,7 +21,7 @@ class BinarySearchTree{
     }
     size(){
         return this.count;
-    }
+    }                 
     insert(value) {
         this.count++;
 
@@ -61,7 +61,7 @@ class BinarySearchTree{
         while(currentNode.left){
             currentNode = currentNode.left
         }
-        return currentNode.value
+        return currentNode.value;
     }
     max() {
         let currentNode = this.root;
