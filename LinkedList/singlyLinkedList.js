@@ -1,4 +1,8 @@
-
+/**
+ * linked lists are good for insertion and deletion
+ * singly linked list  --> each node has only one next pointer to the list
+ *  doubly linked list ---> each node has 2  pointers one to the nxt node and the other to the prev node
+ */
 class Node {
     constructor(data,next) {
         this.data = data;
@@ -13,7 +17,7 @@ class LinkedList {
     }
     //to add data at the beginning
     unshift(data){
-        const newHead = new Node(data,this.head)
+        const newHead = new Node(data,this.head);
         this.length ++
         this.head = newHead
     }
@@ -75,20 +79,35 @@ class LinkedList {
         this.head.next= newData
         return last
     }
-    getLast(){
-        let currentNode = this.head
+    // reverse a linked list 
+    reverse(){
+        let curr = this.head 
+        let next = null
+        let prev = null
 
+        while(curr !== null) {
+           next = curr.next
+           curr.next =prev
+           prev = curr
+           curr = next
+        }
+ 
+        return prev
+    }
+    getLast(){
+
+        let currentNode = this.head;
         while (currentNode && currentNode.next) {
-            currentNode =currentNode.next
+            currentNode =currentNode.next;
         }
       return currentNode;
     }
-    // remove a data
+    // remove a data  at a specific index
     remove(index){
         if (!this.getIndex(index)) {
             return false;
         }
-
+      
         if (index === 0) {
             return this.shift();
         }
@@ -132,7 +151,7 @@ class LinkedList {
         
         return curr
     }
-    // set data to a specified position
+    // set data
     set(index,data){
 
         if (index > this.length  ||  !this.getIndex(index)){
@@ -141,7 +160,6 @@ class LinkedList {
    
         const node = this.getIndex(index) 
         node.data =data
-
         return true
     }
     clear(){
@@ -153,11 +171,16 @@ class LinkedList {
 const t5 = new LinkedList();
 t5.unshift(55)
 t5.unshift(77)
+t5.unshift(33)
+
+// t5.reverse()
 // t5.unshift(22)
 // t5.unshift(89)
 // t5.push(9)
 
 console.log(t5);
-console.log(t5.getLast());
-console.log(t5.getIndex(0));
-console.log(t5.set(0,11));
+console.log(t5.reverse());
+//console.log("is last " ,t5.getLast());
+//console.log(t5.getIndex(0));
+// console.log(t5.set(0,11));
+//console.log("is last " ,t5.getLast());
