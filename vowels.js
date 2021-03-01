@@ -19,7 +19,7 @@
         const char = str[i];
  
         for (let j= 0 ; j < vowels.length ; j++) {
-            const vowel = vowels[j]
+            const vowel = vowels[j] ; 
       
             if (char === vowel) {
                 count ++
