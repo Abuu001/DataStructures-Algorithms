@@ -13,14 +13,14 @@ class HashTable{
        this.table=  new Array(17)
        this.numItems=  0
     }
-
+ 
     setItem(key,value){
         this.numItems++
         const idx = hashStringToInt(key,this.table.length);
         if  (this.table[idx]) {
             this.table[idx].push([key,value])
         }else{
-            this.table [idx] = [[key,value]]
+            this.table[idx] = [[key,value]]
         }
     }
     getItem=(key)=>{
