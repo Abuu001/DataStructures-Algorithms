@@ -1,16 +1,22 @@
-// Implementing stacks in a linked list
+// Stacks
+//palindrome
 
+let letters =[]
+let word = "racecar"
+let reversedWord = ''
 
+for (let i=0 ;i < word.length ; i++) {
+    const char = word[i] 
+    letters.push(char)
+}
 
-class Stack{
-    constructor(){
-        this.data =[]
-    }
-    push(val){
-        this.data.push(val)
-    }
-    pop(){
-        return this.data.pop()
-    }
+for ( let i=0;i<word.length;i++) {
+    const char = letters.pop()
+  reversedWord += char
+}
 
+if (word === reversedWord) {
+    console.log(`${word} is a palindrome`);
+}else{
+    console.log(`${word} is NOT  a palindrome`);
 }
