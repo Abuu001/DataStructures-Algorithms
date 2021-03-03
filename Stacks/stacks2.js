@@ -1,6 +1,8 @@
 // Stacks
 //palindrome
 
+//LIFO 
+
 let letters =[]
 let word = "racecar"
 let reversedWord = ''
