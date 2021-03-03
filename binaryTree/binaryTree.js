@@ -16,8 +16,8 @@ class Node{
 
 class BinarySearchTree{
     constructor(value){
-        this.root = new Node(value)
-        this.count =1
+        this.root = new Node(value);
+        this.count =1;
     }
     size(){
         return this.count;
@@ -26,7 +26,10 @@ class BinarySearchTree{
         this.count++;
 
         let newNode = new Node(value)
-
+        if (this.root === null){
+            this.root = new Node(value)
+            return ;
+        }
         // recursive function
         const searchTree = node =>{
 
@@ -48,14 +51,14 @@ class BinarySearchTree{
                 }
                 //if  there is a right child call search tree again
                 else{
-                    searchTree(node.right)
+                    searchTree(node.right);
                 }
             }
    
         }
        searchTree(this.root)
     }
-    min (){
+    min (){ 
         let currentNode = this.root;
 
         while(currentNode.left){
@@ -72,7 +75,7 @@ class BinarySearchTree{
         return currentNode.value
     }
     contains(value){
-        let currentNode = this.root
+        let currentNode = this.root;
 
         while ( currentNode){
             if ( value === currentNode.value) {
@@ -108,6 +111,11 @@ dfsInOrder(){
 
     return result
 }
+
+/**
+ * pre order - traverses all root nodes (on left side)on the tree then left nodes  (on left side) then right nodes (on left side)
+ *  then root nodes (on right side)on the tree then lrft nodes  (on right side) then right nodes (on right side)
+ */
 //pre - order  ---> root ,left , right
 dfsPreOrder(){
     let result =[]
@@ -117,7 +125,7 @@ dfsPreOrder(){
 
         // if left child exists go left again
         if(node.left)  traverse(node.left)
-
+ 
         // if right child exists go right again 
         if(node.right)  traverse(node.right)
        
@@ -127,6 +135,10 @@ dfsPreOrder(){
     return result
    
 }
+/**
+ * post order - traverses all left nodes (on left side)on the tree then right nodes  (on left side) then root nodes (on left side)
+ *  then left nodes (on right side)on the tree then right nodes  (on right side) then root nodes (on right side)
+ */
     //post - order   --> left,right ,root
 dfsPostOrder(){
     let result =[]
