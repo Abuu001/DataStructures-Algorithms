@@ -33,7 +33,7 @@
 console.log(vowel1('what') );  //1
 console.log(vowel1('why?')); //0
 console.log(vowel1('aEIoU'));  // 5
-console.log(vowel1('aaaabbbbbuuuuu'));  //9
+console.log(vowel1('aaaabbbbbuuuuu'));  ///9
 
 
 console.log("===================");
